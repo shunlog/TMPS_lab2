@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
 class Entity
 {
 public:
@@ -25,21 +26,13 @@ public:
             return new Monster(health_, speed_);
         }
 
-    void setName(const std::string& name) {
-        this->name = name;
-    }
-
-    void setWeapon(const std::string& weapon) {
-        this->weapon = weapon;
-    }
-
     void displayInfo() {
         std::cout << "Info on monster: name = " << name << ", weapon = " << weapon << std::endl;
     }
 
-private:
     std::string name;
     std::string weapon;
+private:
     int health_;
     int speed_;
 };
@@ -80,11 +73,11 @@ public:
     }
 
     void buildName() override {
-        monster->setName("Zombie");
+        monster->name = "Zombie";
     }
 
     void buildWeapon() override {
-        monster->setWeapon("Shovel");
+        monster->weapon = "Shovel";
     }
 
     Monster* getResult() override {
@@ -103,11 +96,11 @@ public:
     }
 
     void buildName() override {
-        monster->setName("Vampire");
+        monster->name = "Vampire";
     }
 
     void buildWeapon() override {
-        monster->setWeapon("Fangs");
+        monster->weapon = "Fangs";
     }
 
     Monster* getResult() override {
